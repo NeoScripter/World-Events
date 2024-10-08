@@ -1,0 +1,22 @@
+// Breakpoints
+$breakpoint1: rem(600px);
+$breakpoint2: rem(1200px);
+
+// Sizes
+$wr-width: rem(1111px);
+
+// Colors
+
+$colors: (
+    "primary": (
+        "cyan": #5FB4A2,
+        "btn-bg": #203A4C,
+        "footer-bg": #33323D
+    ),
+
+    "secondary": (
+        "light": #FAFAFA,
+        "border": #EAEAEB,
+        "danger": #F43030
+    )
+);
