@@ -98,22 +98,44 @@
 }
 
 .header__lang-toggle {
+    position: relative;
 }
 
 .header__select {
     padding: vw(10px) vw(16px);
+    padding-left: vw(30px);
     border-radius: vw(32px);
     background-color: color("dark-100");
     border: none;
     color: color("light-400");
+    cursor: pointer;
+    appearance: none;
     @include fs14();
 
     @include m1() {
         padding: vs(10px) vs(16px);
         border-radius: vs(32px);
+        padding-left: vs(30px);
     }
 }
 
+.header__select-arrow {
+    position: absolute;
+    left: vw(12px);
+    top: 45%;
+    width: vw(14px);
+    height: vw(5px);
+
+    img {
+        @include image(contain);
+    }
+    @include m1() {
+        left: vs(12px);
+        top: 45%;
+        width: vs(14px);
+        height: vs(5px);
+    }
+}
 .header__popup-open {
     display: none;
 
