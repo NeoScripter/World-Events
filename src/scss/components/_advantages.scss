@@ -1,0 +1,70 @@
+.advs {
+
+
+}
+
+.advs__title {
+    text-align: center;
+    @include fs80();
+}
+
+.advs__carousel {
+    overflow: hidden;
+    overflow: clip;
+    margin-block: vw(56px);
+    margin-left: vw(405px);
+
+    @include m1() {
+        margin-block: vs(24px) 0;
+        margin-left: 0;
+    }
+}
+
+.advs__viewport {
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: vw(16px);
+
+    @include m1() {
+        flex-direction: column;
+        gap: vs(16px);
+    }
+    
+}
+
+.advs__item {
+    flex: 1 0 vw(460px);
+
+    img {
+        @include image(contain);
+    }
+
+    @include m1() {
+        flex: 1 0 100%;
+    }
+}
+
+.advs__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: vw(6px);
+
+    @include m1() {
+        display: none;
+    }
+}
+
+.advs__dot {
+    cursor: pointer;
+    border: none;
+    background-color: rgba(210, 209, 212, 1);
+    width: vw(16px);
+    height: vw(16px);
+    border-radius: 50%;
+    
+    &.slide--selected {
+        background-color: #BABABA;
+    }
+}
