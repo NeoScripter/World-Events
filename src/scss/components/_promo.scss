@@ -1,0 +1,92 @@
+.promo {
+    position: relative;
+    background-color: color('dark-400');
+    padding: vw(80px) vw(468px);
+
+    @include m1() {
+        padding: vs(34px) vs(15px);
+        border-radius: vs(20px);
+    }
+}
+
+.promo__marquee {
+    position: absolute;
+    padding-block: vw(12px);
+    bottom: vw(139px);
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: color("dark-100");
+    z-index: 2;
+}
+
+.promo__marquee-text {
+    display: flex;
+    gap: vw(12px);
+    align-items: center;
+    color: color('orange-400');
+    text-transform: uppercase;
+
+    @include fs20();
+
+    img {
+        display: inline-block;
+        width: vw(24px);
+        height: vw(24px);
+    }
+}
+
+.promo__flex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: vw(117px);
+}
+
+.promo__content {
+    margin-top: vw(123px);
+    width: vw(640px);
+    flex-grow: 0;
+}
+
+.promo__title {
+    color: color('light-400');
+    margin-bottom: vw(64px);
+
+    @include fs56();
+}
+
+.promo__btns {
+    display: flex;
+    align-items: center;
+    gap: vw(8px);
+}
+
+.promo__btn {
+    display: block;
+    width: vw(200px);
+    height: vw(60px);
+    border-radius: vw(20px);
+    overflow: hidden;
+
+    img {
+        @include image();
+    }
+}
+
+.promo__phone {
+    position: relative;
+    width: vw(384px);
+    height: vw(668px);
+    background-image: url(../assets/images/phone-frame.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-grow: 0;
+}
+
+.promo__image {
+    margin-inline: auto;
+    margin-top: vw(180px);
+    width: 80%;
+}
