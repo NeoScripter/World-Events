@@ -1,0 +1,134 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    padding: vw(18px) vw(405px);
+
+    @include m1() {
+        padding: vs(6px) vs(15px);
+    }
+}
+
+.header__logo {
+    width: vw(255px);
+    height: vw(27px);
+    flex-shrink: 0;
+
+    picture,
+    img {
+        @include image();
+    }
+
+    @include m1() {
+        width: vs(92px);
+        height: vs(29px);
+    }
+}
+
+.header__nav {
+
+    @include m1() {
+        display: none;
+        left: 0;
+        right: 0;
+        top: 0;
+        position: absolute;
+        z-index: 10;
+        background-color: color('light-900');
+        border-radius: 0 0 vs(20px) vs(20px);
+        width: 100%;
+        height: vs(300px);
+        padding: vs(15px) vs(15px) vs(15px) vs(38px);
+    }
+}
+
+.header__nav.header__nav--open {
+
+    @include m1() {
+        display: block;
+    }
+}
+
+.header__popup-close {
+    display: none;
+
+    @include m1() {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        width: vs(44px);
+        height: vs(44px);
+        border: none;
+        background-color: transparent;
+        margin-left: auto;
+
+        
+        img {
+            width: vs(18px);
+            height: vs(21px);
+        }
+    }
+}
+
+.header__ul {
+    display: flex;
+    align-items: center;
+    gap: vw(40px);
+
+    @include m1() {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: vs(36px);
+    }
+}
+
+.header__link {
+    transition: font-family 0.3s ease;
+
+    @include fs16();
+
+    @include hover() {
+        font-family: "Medium";
+    }
+}
+
+.header__lang-toggle {
+}
+
+.header__select {
+    padding: vw(10px) vw(16px);
+    border-radius: vw(32px);
+    background-color: color("dark-100");
+    border: none;
+    color: color("light-400");
+    @include fs14();
+
+    @include m1() {
+        padding: vs(10px) vs(16px);
+        border-radius: vs(32px);
+    }
+}
+
+.header__popup-open {
+    display: none;
+
+    @include m1() {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        width: vs(44px);
+        height: vs(44px);
+        background-color: color('dark-100');
+        border: none;
+        border-radius: vs(10px);
+
+        img {
+            width: vs(18px);
+            height: vs(16px);
+        }
+    }
+}

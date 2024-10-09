@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Events</title>
-    <script src="bundle.js" defer></script>
-</head>
-<body>
-    hello world
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>World Events</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="header">
+                
+                <div class="header__logo">
+                    <picture>
+                        <source srcset="assets/svgs/logo-mobile.svg" media="(max-width: 600px)" />
+                        <img src="assets/images/logo.png" alt="Company logo" />
+                    </picture>
+                </div>
+
+                <nav class="header__nav" aria-label="Primary Navigation">
+                    <button class="header__popup-close" aria-label="Close menu" aria-expanded="false">
+                        <img src="assets/svgs/burger-close.svg" alt="Close menu" />
+                    </button>
+
+                    <ul class="header__ul">
+                        <li><a href="#download" class="header__link" aria-label="Download the app">Download</a></li>
+                        <li><a href="#premium" class="header__link" aria-label="Go to Premium section">Premium</a></li>
+                        <li><a href="#channels" class="header__link" aria-label="Explore channels">Channels</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__lang-toggle">
+                    <select name="language" id="language-select" class="header__select" aria-label="Language Selector">
+                        <option value="En" selected>En</option>
+                        <option value="Es">Es</option>
+                        <option value="Ru">Ru</option>
+                        <option value="Pt">Pt</option>
+                        <option value="Ua">Ua</option>
+                    </select>
+                </div>
+
+                <button class="header__popup-open" aria-label="Open menu" aria-expanded="false">
+                    <img src="assets/svgs/burger-open.svg" alt="Open menu" />
+                </button>
+            </header>
+
+            <section class="hero">This is a hero section</section>
+        </div>
+    </body>
 </html>

@@ -6,12 +6,21 @@ body {
 }
 
 body {
-    font-family: "BodyRegular";
+    font-family: "Regular";
     min-height: 100vh;
-    color: var(--font);
-    background-color: var(--body-bg);
+    background-color: color("light-900");
+    color: color();
 }
 
 .wrapper {
+    margin-inline: auto;
+    max-width: 2200px;
+}
 
+section {
+    margin-bottom: vw(120px);
+
+    @include m1() {
+        margin-bottom: vs(48px);
+    }
 }

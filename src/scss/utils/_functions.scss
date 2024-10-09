@@ -8,8 +8,8 @@
     @return calc(ceil($value * 100) / 100);
 }
 
-@function color($category, $variant: "primary") {
-    @return map-get(map-get($colors, $category), $variant);
+@function color($variant: "dark-400") {
+    @return map-get($colors, $variant);
 }
 
 @mixin generate-css-variables($theme-map) {
@@ -33,6 +33,10 @@
     @return $rounded; // Возвращаем округленное значение.
 }
 
+$screen-width: 1920px;
+$small-screen: 600px;
+$large-screen: 2200px;
+
 // Определяет значение clamp для адаптивного размера элемента на странице. 
 @function vw(
     $initial-size,
@@ -45,4 +49,10 @@
         px-to-vw($initial-screen-width, $initial-size), // Адаптивное значение размера в vw.
         define-limits($initial-screen-width, $initial-size, $large-screen-size) // Максимальное значение размера.
     );
+}
+
+@function vs($size) {
+    $result: calc($size / 320px * 100); // Вычисляем процентное соотношение размера к ширине экрана.
+    $rounded: calc(ceil($result * 100) / 100); // Округляем результат до двух знаков после запятой.
+    @return $rounded * 1vw; // Возвращаем итоговое значение в vw.
 }

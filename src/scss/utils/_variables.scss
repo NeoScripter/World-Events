@@ -8,15 +8,10 @@ $wr-width: rem(1111px);
 // Colors
 
 $colors: (
-    "primary": (
-        "cyan": #5FB4A2,
-        "btn-bg": #203A4C,
-        "footer-bg": #33323D
-    ),
-
-    "secondary": (
-        "light": #FAFAFA,
-        "border": #EAEAEB,
-        "danger": #F43030
-    )
+    "dark-400": #26263c,
+    "dark-100": #3e3e50,
+    "light-400": #faf7f1,
+    "light-900": #eae7e2,
+    "orange-400": #fe6130,
+    "blue-400": #5c5c7f
 );
