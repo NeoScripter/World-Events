@@ -1,9 +1,10 @@
 .roadmap {
     padding-left:vw(401px);
-    overflow-x: scroll;
+
 
     @include m1() {
         padding-left: 0;
+        overflow-x: scroll;
     }
 }
 
@@ -22,7 +23,7 @@
 
     @include m1() {
         display: grid;
-        grid-template-rows: vs(243px) vs(198px);
+        grid-template-rows: vs(324px) vs(198px);
     }
 }
 
@@ -33,16 +34,21 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    top: vw(86px);
+    top: vw(56px);
 }
 
 .roadmap__image {
-
+    z-index: 2;
     img {
         @include image(contain);
         @include m1() {
             object-position: left;
         }
+        
+    }
+
+    @include m1() {
+        width: vs(1555px);
     }
 }
 
@@ -64,6 +70,10 @@
         border-radius: vs(15px);
         padding: vs(24px);
         width: vs(220px);
+
+        &:nth-of-type(even) {
+            margin-top: vs(50px);
+        }
     }
 }
 
@@ -75,19 +85,38 @@
     margin-block: vw(8px) vw(16px);
     color: color('orange-400');
     @include fs18();
+
+    @include m1() {
+        font-size: vs(16px);
+        margin-block: vs(8px) vs(12px);
+    }
 }
 
 .roadmap__prg {
     margin-bottom: vw(5px);
     @include fs18();
+
+    @include m1() {
+        font-size: vs(16px);
+        margin-bottom: vs(5px);
+    }
 }
 
 .roadmap__ul {
     padding-left: vw(15px);
+
+    @include m1() {
+        padding-left: vs(15px);
+    }
     li {
         list-style: disc;
         margin-bottom: vw(3px);
         @include fs18();
+
+        @include m1() {
+            font-size: vs(16px);
+            margin-bottom: vs(3px);
+        }
     }
 }
 
@@ -96,4 +125,8 @@
 .roadmap__items {
     overflow-x: scroll;
     display: flex;
+    align-items: flex-start;
+    gap: vs(15px);
+    position: relative;
+    top: vs(71px);
 }
