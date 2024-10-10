@@ -59,6 +59,7 @@
 
     @include m1() {
         grid-template-columns: 1fr;
+        width: 100%;
     }
 }
 
@@ -149,6 +150,8 @@
 
     @include m1() {
         margin-top: 0;
+        margin-inline: auto;
+        width: vs(290px);
 
         img {
             @include image(contain);
