@@ -69,7 +69,7 @@
                     <div class="hero__column hero__column--left">
                         <div class="hero__item">
                             <div class="hero__thumbnail">
-                                <img src="assets/images/hero/hero_1.webp" alt="hero image" />
+                                <img src="assets/images/hero/hero_1.png" alt="hero image" />
 
                                 <div class="hero__flex">
                                     <div class="hero__label">New</div>
@@ -85,7 +85,7 @@
 
                         <div class="hero__item">
                             <div class="hero__thumbnail">
-                                <img src="assets/images/hero/hero_2.webp" alt="hero image" />
+                                <img src="assets/images/hero/hero_2.png" alt="hero image" />
 
                                 <div class="hero__flex">
                                     <div class="hero__label">Interesting</div>
@@ -101,7 +101,7 @@
 
                         <div class="hero__item">
                             <div class="hero__thumbnail">
-                                <img src="assets/images/hero/hero_1.webp" alt="hero image" />
+                                <img src="assets/images/hero/hero_3.png" alt="hero image" />
 
                                 <div class="hero__flex">
                                     <div class="hero__label">Today</div>
@@ -117,7 +117,7 @@
                     </div>
 
                     <div class="hero__image">
-                        <img src="assets/images/hero/hero_phone.webp" alt="phone" />
+                        <img src="assets/images/phone-frame.png" alt="phone" />
 
                         <div class="hero__pseudo">
                             <img src="assets/svgs/hero_waves.png" alt="" />
@@ -131,7 +131,7 @@
                     <div class="hero__column hero__column--right">
                         <div class="hero__item">
                             <div class="hero__thumbnail">
-                                <img src="assets/images/hero/hero_4.webp" alt="hero image" />
+                                <img src="assets/images/hero/hero_4.png" alt="hero image" />
 
                                 <div class="hero__flex">
                                     <div class="hero__label">Weekly</div>
@@ -147,7 +147,7 @@
 
                         <div class="hero__item">
                             <div class="hero__thumbnail">
-                                <img src="assets/images/hero/hero_5.webp" alt="hero image" />
+                                <img src="assets/images/hero/hero_5.png" alt="hero image" />
 
                                 <div class="hero__flex">
                                     <div class="hero__label">Events</div>
@@ -163,7 +163,7 @@
 
                         <div class="hero__item">
                             <div class="hero__thumbnail">
-                                <img src="assets/images/hero/hero_6.webp" alt="hero image" />
+                                <img src="assets/images/hero/hero_6.png" alt="hero image" />
 
                                 <div class="hero__flex">
                                     <div class="hero__label">Women</div>
@@ -187,11 +187,11 @@
 
                 <div class="qrs__flex">
                     <div class="qrs__item">
-                        <img src="assets/images/qr/qr_1.webp" alt="" />
+                        <img src="assets/images/qr/qr_2.png" alt="" />
                     </div>
 
                     <div class="qrs__item">
-                        <img src="assets/images/qr/qr_2.webp" alt="" />
+                        <img src="assets/images/qr/qr_1.png" alt="" />
                     </div>
                 </div>
             </section>
@@ -304,34 +304,6 @@
                     <button data-item="3" class="reviews__dot slide"></button>
                 </div>
             </section>
-
-            <script>
-                // Define the Alpine.js carousel component
-                function carousel() {
-                  return {
-                    currentIndex: 0, // Track the current slide index
-                    slides: [1, 2, 3], // Number of slides
-            
-                    // Method to navigate to a specific slide
-                    goToSlide(index) {
-                      this.currentIndex = index;
-            
-                      // Access the viewport and calculate dimensions
-                      const viewport = this.$refs.viewport;
-                      if (!viewport) return;
-            
-                      // Calculate the width of the first child and gap value
-                      const firstChildRect = viewport.firstElementChild.getBoundingClientRect();
-                      const styles = window.getComputedStyle(viewport);
-                      const gapValue = parseFloat(styles.gap || styles.columnGap) || 0;
-                      const totalWidth = firstChildRect.width + gapValue;
-            
-                      // Set the transform to shift the viewport
-                      viewport.style.transform = `translateX(-${totalWidth * this.currentIndex}px)`;
-                    }
-                  };
-                }
-              </script>
 
             <section class="promo">
                 <div class="promo__marquee">
