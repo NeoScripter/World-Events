@@ -1,0 +1,134 @@
+.news {
+    margin-bottom: 0;
+}
+
+.news__headline {
+    height: vw(180px);
+    background-color: color('light-900');
+    z-index: 1;
+    position: relative;
+    isolation: isolate;
+
+    display: grid;
+    grid-template-columns: 1fr vw(900px) 1fr;
+
+    @include m1() {
+        height: vs(110px);
+        grid-template-columns: vs(30px) 1fr vs(30px);
+    }
+}
+
+.news__placeholder {
+    background-color: color('light-400');
+}
+
+.news__placeholder--left {
+    border-radius: 0 vw(40px) 0 0;
+
+    @include m1() {
+        border-radius: 0 vs(40px) 0 0;
+    }
+}
+
+.news__placeholder--right {
+    border-radius: vw(40px) 0 0 0;
+
+    
+    @include m1() {
+        border-radius: vs(40px) 0 0 0;
+    }
+}
+
+.news__title {
+    padding-inline: vw(140px);
+    text-align: center;
+    z-index: 10;
+    border-radius: vw(40px);
+    background-color: color('light-900');
+    @include fs64();
+
+    @include m1() {
+        padding-inline: vs(30px);
+        border-radius: vs(40px);
+        font-size: vs(32px);
+    }
+}
+
+.news__headline::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    top: 80%;
+    background-color: color('light-400');
+    border-radius: vw(40px);
+    z-index: -9;
+
+    @include m1() {
+        border-radius: vs(40px);
+        top: 50%;
+    }
+}
+
+.news__lines {
+    background-color: color('light-400');
+    padding-bottom: vw(120px);
+    padding-top: vw(70px);
+
+    @include m1() {
+        padding-bottom: vs(48px);
+        padding-top: vs(40px);
+    }
+}
+
+.news__marquee {
+    padding-block: vw(20px);
+    overflow: hidden;
+    white-space: nowrap;
+
+    @include m1() {
+        padding-block: vs(10px);
+    }
+}
+
+.news__marquee--top {
+    margin-bottom: vw(20px);
+
+    @include m1() {
+        margin-bottom: vs(20px);
+    }
+
+    .news__marquee-text {
+        animation: marquee-left 7.5s linear infinite;
+    }
+}
+
+.news__marquee--bottom {
+    .news__marquee-text {
+        animation: marquee-right 9.5s linear infinite;
+    }
+}
+
+.news__marquee-text {
+    color: color('orange-400');
+
+    @include fs32();
+}
+
+@keyframes marquee-left {
+    0% {
+        transform: translateX(0%); 
+    }
+    100% {
+        transform: translateX(-100%); 
+    }
+}
+
+
+@keyframes marquee-right {
+    0% {
+        transform: translateX(-100%); 
+    }
+    100% {
+        transform: translateX(0%); 
+    }
+}

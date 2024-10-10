@@ -68,12 +68,14 @@
 
 .footer__icon {
     width: vw(220px);
+    height: vw(60px);
     img {
         @include image(contain);
     }
 
     @include m1() {
         width: vs(246px);
+        height: vs(55px);
     }
 }
 

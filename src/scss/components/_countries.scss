@@ -1,0 +1,14 @@
+.countries {
+    padding-inline: vw(406px);
+
+    @include m1() {
+        padding-inline: 0;
+    }
+}
+
+.countries__image {
+    img,
+    picture {
+        @include image(contain);
+    }
+}

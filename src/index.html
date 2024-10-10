@@ -4,10 +4,19 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>World Events</title>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
     <body>
         <div class="wrapper">
-            <header class="header">
+            <header
+                class="header"
+                x-data="{ showModal: false, enableAlpine: false }"
+                x-init="
+              enableAlpine = window.matchMedia('(max-width: 600px)').matches;
+              window.matchMedia('(max-width: 600px)').addEventListener('change', event => enableAlpine = event.matches);
+            "
+                x-cloak
+            >
                 <div class="header__logo">
                     <picture>
                         <source srcset="assets/svgs/logo-mobile.svg" media="(max-width: 600px)" />
@@ -15,8 +24,14 @@
                     </picture>
                 </div>
 
-                <nav class="header__nav" aria-label="Primary Navigation">
-                    <button class="header__popup-close" aria-label="Close menu" aria-expanded="false">
+                <nav
+                    class="header__nav"
+                    aria-label="Primary Navigation"
+                    x-show="showModal || !enableAlpine"
+                    @click.away="showModal = false"
+                    x-transition.duration.300ms
+                >
+                    <button @click="showModal = false" class="header__popup-close" aria-label="Close menu" aria-expanded="false">
                         <img src="assets/svgs/burger-close.svg" alt="Close menu" />
                     </button>
 
@@ -40,7 +55,7 @@
                     </span>
                 </div>
 
-                <button class="header__popup-open" aria-label="Open menu" aria-expanded="false">
+                <button @click="showModal = true" class="header__popup-open" aria-label="Open menu" aria-expanded="false">
                     <img src="assets/svgs/burger-open.svg" alt="Open menu" />
                 </button>
             </header>
@@ -165,7 +180,7 @@
                 </div>
             </section>
 
-            <section class="qrs">
+            <section class="qrs" id="download">
                 <h2 class="qrs__title">Download now</h2>
 
                 <h4 class="qrs__subtitle">Scan QR-code to get the App</h4>
@@ -291,38 +306,136 @@
             </section>
 
             <section class="promo">
-
                 <div class="promo__marquee">
-                    <div class="promo__marquee-text">
-                        <img src="assets/svgs/marquee.svg" alt="">
-                        world events
+                    <div class="promo__marquee-text" x-data>
+                        <template x-for="i in 40" :key="i">
+                            <div>
+                                <img src="assets/svgs/marquee.svg" alt="" />
+                                world events
+                            </div>
+                        </template>
                     </div>
                 </div>
 
                 <div class="promo__flex">
-
                     <div class="promo__content">
                         <h2 class="promo__title">Share World Events with a friend and get a discont on premium</h2>
 
                         <div class="promo__btns">
-
                             <a href="" class="promo__btn">
-                                <img src="assets/images/app-store.png" alt="">
+                                <img src="assets/images/app-store.png" alt="" />
                             </a>
 
                             <a href="" class="promo__btn">
-                                <img src="assets/images/play-store.png" alt="">
+                                <img src="assets/images/play-store.png" alt="" />
                             </a>
-
                         </div>
                     </div>
 
                     <div class="promo__phone">
                         <div class="promo__image">
-                            <img src="assets/images/phone_content.png" alt="">
+                            <img src="assets/images/phone_content.png" alt="" />
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <section class="countries">
+
+                <div class="countries__image">
+                    <picture>
+                        <source srcset="assets/images/countries-mobile.webp" media="(max-width: 600px)" />
+                        <img src="assets/images/countries-desktop.webp" alt="countries" />
+                    </picture>
+                </div>
+
+            </section>
+
+            <section class="news">
+
+                <div class="news__headline">
+                    <div class="news__placeholder news__placeholder--left"></div>
+                    <div class="news__title">The world’s top news in one app</div>
+                    <div class="news__placeholder news__placeholder--right"></div>
+                </div>
+
+                <div class="news__lines">
+
+                    <div class="news__marquee news__marquee--top">
+                        <div class="news__marquee-text">CNN News | Medusa-LIVE | Liverpool FC News | Sportstar | Medusa-LIVE | Readovka | FOX News | Varlamon News | CNN News | Medusa-LIVE | Liverpool FC News | Sportstar | Medusa-LIVE | Readovka | FOX News | Varlamon News | CNN News | Medusa-LIVE | Liverpool FC News | Sportstar | Medusa-LIVE | Readovka | FOX News | Varlamon News</div>
+                    </div>
+
+                    <div class="news__marquee news__marquee--bottom">
+                        <div class="news__marquee-text">CNN News | Medusa-LIVE | Liverpool FC News | Sportstar | Medusa-LIVE | Readovka | FOX News | Varlamon News | CNN News | Medusa-LIVE | Liverpool FC News | Sportstar | Medusa-LIVE | Readovka | FOX News | Varlamon News | CNN News | Medusa-LIVE | Liverpool FC News | Sportstar | Medusa-LIVE | Readovka | FOX News | Varlamon News</div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="roadmap">
+
+                <div class="roadmap__desktop">
+                    <div class="roadmap__top-items" x-data="{ titles: ['Update 1.1', 'Update 1.3', 'Update 1.5'], dates: ['22.02.2024', '26.07.2024', '08.10.2024'] }">
+                        <template x-for="i in 3" :key="i">
+                            <div class="roadmap__item">
+                                <h3 class="roadmap__title" x-text="titles[i - 1]"></h3>
+                                <p class="roadmap__date" x-text="dates[i - 1]"></p>
+                                <p class="roadmap__prg">Important updates have been made to the application structure.</p>
+                                <p class="roadmap__prg">Now available:</p>
+                                <ul class="roadmap__ul">
+                                    <li>chat support,</li>
+                                    <li>new stickers,</li>
+                                    <li>even more channels.</li>
+                                </ul>
+                            </div>
+                        </template>
+                    </div>
+
+                    <div class="roadmap__image">
+                        <img src="assets/images/roadmap.png" alt="">
+                    </div>
+
+                    <div class="roadmap__bottom-items" x-data="{ titles: ['Update 1.2', 'Update 1.4'], dates: ['14.04.2024', '08.10.2024'] }">
+                        <template x-for="i in 2" :key="i">
+                            <div class="roadmap__item">
+                                <h3 class="roadmap__title" x-text="titles[i - 1]"></h3>
+                                <p class="roadmap__date" x-text="dates[i - 1]"></p>
+                                <p class="roadmap__prg">Important updates have been made to the application structure.</p>
+                                <p class="roadmap__prg">Now available:</p>
+                                <ul class="roadmap__ul">
+                                    <li>chat support,</li>
+                                    <li>new stickers,</li>
+                                    <li>even more channels.</li>
+                                </ul>
+                            </div>
+                        </template>
+                    </div>
+
+                </div>
+
+                <div class="roadmap__mobile">
+                    <div class="roadmap__items" x-data="{ titles: ['Update 1.1', 'Update 1.2', 'Update 1.3', 'Update 1.4', 'Update 1.5'], dates: ['22.02.2024', '14.04.2024', '26.07.2024', '08.10.2024', '08.10.2024'] }">
+                        <template x-for="i in 5" :key="i">
+                            <div class="roadmap__item">
+                                <h3 class="roadmap__title" x-text="titles[i - 1]"></h3>
+                                <p class="roadmap__date" x-text="dates[i - 1]"></p>
+                                <p class="roadmap__prg">Important updates have been made to the application structure.</p>
+                                <p class="roadmap__prg">Now available:</p>
+                                <ul class="roadmap__ul">
+                                    <li>chat support,</li>
+                                    <li>new stickers,</li>
+                                    <li>even more channels.</li>
+                                </ul>
+                            </div>
+                        </template>
+                    </div>
+
+                    <div class="roadmap__image">
+                        <img src="assets/images/roadmap-mobile.png" alt="">
+                    </div>
+                </div>
+
             </section>
 
             <footer class="footer">

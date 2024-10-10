@@ -26,7 +26,7 @@ export default class AnimationHandler {
     }
 
     init() {
-        this.toggleBurgerMenu();
+       /*  this.toggleBurgerMenu(); */
         this.initCarousel();
     }
 

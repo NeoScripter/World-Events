@@ -1,6 +1,6 @@
 .promo {
     position: relative;
-    background-color: color('dark-400');
+    background-color: color("dark-400");
     padding: vw(80px) vw(468px);
 
     @include m1() {
@@ -19,21 +19,52 @@
     white-space: nowrap;
     background-color: color("dark-100");
     z-index: 2;
+
+    @include m1() {
+        padding-block: vs(12px);
+        bottom: vs(34px);
+    }
 }
 
 .promo__marquee-text {
     display: flex;
     gap: vw(12px);
     align-items: center;
-    color: color('orange-400');
+    color: color("orange-400");
     text-transform: uppercase;
+    animation: marquee 7.5s linear infinite;
 
     @include fs20();
 
     img {
-        display: inline-block;
         width: vw(24px);
         height: vw(24px);
+        flex-shrink: 0;
+    }
+
+    & > * {
+        display: flex;
+        align-items: center;
+        margin-inline: vw(12px);
+        gap: vw(12px);
+    }
+
+    @include m1() {
+        animation: marquee 5s linear infinite;
+        gap: vs(12px);
+
+        img {
+            flex-shrink: 0;
+            width: vs(24px);
+            height: vs(24px);
+        }
+
+        & > * {
+            display: flex;
+            align-items: center;
+            margin-inline: vs(12px);
+            gap: vs(12px);
+        }
     }
 }
 
@@ -48,19 +79,34 @@
     margin-top: vw(123px);
     width: vw(640px);
     flex-grow: 0;
+
+    @include m1() {
+        margin-top: vs(32px);
+        width: 100%;
+    }
 }
 
 .promo__title {
-    color: color('light-400');
+    color: color("light-400");
     margin-bottom: vw(64px);
 
     @include fs56();
+
+    @include m1() {
+        margin-bottom: vs(32px);
+        text-align: center;
+    }
 }
 
 .promo__btns {
     display: flex;
     align-items: center;
     gap: vw(8px);
+
+    @include m1() {
+        gap: vs(8px);
+        flex-direction: column;
+    }
 }
 
 .promo__btn {
@@ -71,7 +117,13 @@
     overflow: hidden;
 
     img {
-        @include image();
+        @include image(contain);
+    }
+
+    @include m1() {
+        width: 100%;
+        height: vs(65px);
+        border-radius: vs(20px);
     }
 }
 
@@ -83,10 +135,23 @@
     background-size: contain;
     background-repeat: no-repeat;
     flex-grow: 0;
+
+    @include m1() {
+        display: none;
+    }
 }
 
 .promo__image {
     margin-inline: auto;
     margin-top: vw(180px);
     width: 80%;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%); /* Start from right */
+    }
+    100% {
+        transform: translateX(-100%); /* Move to left */
+    }
 }
