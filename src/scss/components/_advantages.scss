@@ -12,15 +12,14 @@
     overflow: hidden;
     overflow: clip;
     margin-block: vw(56px);
-    margin-left: vw(405px);
 
     @include m1() {
         margin-block: vs(24px) 0;
-        margin-left: 0;
     }
 }
 
 .advs__viewport {
+    margin-left: vw(405px); 
     transition: transform 0.5s ease-in-out;
     display: flex;
     align-items: center;
@@ -29,6 +28,7 @@
     @include m1() {
         flex-direction: column;
         gap: vs(16px);
+        margin-left: 0;
     }
     
 }

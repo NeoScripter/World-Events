@@ -1,11 +1,12 @@
 .promo {
     position: relative;
     background-color: color("dark-400");
-    padding: vw(80px) vw(468px);
+    padding: vw(80px) 0;
 
     @include m1() {
         padding: vs(34px) vs(15px);
         border-radius: vs(20px);
+        height: vs(450px);
     }
 }
 
@@ -32,7 +33,7 @@
     align-items: center;
     color: color("orange-400");
     text-transform: uppercase;
-    animation: marquee 7.5s linear infinite;
+    animation: marquee 10s linear infinite;
 
     @include fs20();
 
@@ -72,16 +73,25 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    margin-inline: auto;
     gap: vw(117px);
+    width: vw(1082px);
+
+    & > * {
+        flex-grow: 0;
+    }
+
+    @include m1() {
+        width: 100%;
+    }
 }
 
 .promo__content {
     margin-top: vw(123px);
     width: vw(640px);
-    flex-grow: 0;
 
     @include m1() {
-        margin-top: vs(32px);
+        margin-top: 0;
         width: 100%;
     }
 }
@@ -89,12 +99,14 @@
 .promo__title {
     color: color("light-400");
     margin-bottom: vw(64px);
+    text-align: left;
 
     @include fs56();
 
     @include m1() {
         margin-bottom: vs(32px);
         text-align: center;
+        width: 100%;
     }
 }
 
@@ -110,26 +122,65 @@
 }
 
 .promo__btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: vw(200px);
     height: vw(60px);
     border-radius: vw(20px);
-    overflow: hidden;
 
     img {
         @include image(contain);
     }
 
     @include m1() {
-        width: 100%;
-        height: vs(65px);
+        width: vs(246px);
+        height: vs(55px);
         border-radius: vs(20px);
     }
 }
 
+.promo__btn--app {
+    background-color: color("orange-400");
+
+    img {
+        width: vw(154px);
+        height: vw(40px);
+    }
+
+    @include m1() {
+        img {
+            width: vs(154px);
+            height: vs(40px);
+        }
+    }
+}
+
+.promo__btn--play {
+    background-color: color("blue-400");
+    justify-content: flex-start;
+    padding-left: vw(30px);
+
+    img {
+        width: vw(139px);
+        height: vw(32px);
+    }
+
+    @include m1() {
+        padding-left: 0;
+        justify-content: center;
+
+        img {
+            width: vs(139px);
+            height: vs(32px);
+        }
+    }
+}
+
 .promo__phone {
+    flex-shrink: 0;
     position: relative;
-    width: vw(384px);
+    width: vw(324px);
     height: vw(668px);
     background-image: url(../assets/images/phone-frame.png);
     background-size: contain;
@@ -141,10 +192,40 @@
     }
 }
 
-.promo__image {
+.promo__logo {
     margin-inline: auto;
     margin-top: vw(180px);
+    width: vw(156px);
+    height: vw(42px);
+
+    > img {
+        @include image();
+    }
+}
+
+.promo__text {
+    margin-block: vw(15px) vw(10px);
+    margin-inline: auto;
     width: 80%;
+    color: #fe6130;
+    text-align: center;
+    font-family: "Bold";
+    font-size: vw(48px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    > img {
+        @include image();
+    }
+}
+
+.promo__icon {
+    margin-inline: auto;
+    width: vw(75px);
+    height: vw(78px);
+    > img {
+        @include image();
+    }
 }
 
 @keyframes marquee {

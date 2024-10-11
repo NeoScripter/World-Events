@@ -67,8 +67,13 @@
 }
 
 .footer__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: vw(220px);
     height: vw(60px);
+    border-radius: vw(20px);
+
     img {
         @include image(contain);
     }
@@ -76,6 +81,44 @@
     @include m1() {
         width: vs(246px);
         height: vs(55px);
+        border-radius: vs(20px);
+    }
+}
+
+.footer__icon--app {
+    background-color: color("orange-400");
+
+    img {
+        width: vw(154px);
+        height: vw(40px);
+    }
+
+    @include m1() {
+        img {
+            width: vs(154px);
+            height: vs(40px);
+        }
+    }
+}
+
+.footer__icon--play {
+    background-color: color("blue-400");
+    justify-content: flex-start;
+    padding-left: vw(30px);
+
+    img {
+        width: vw(154px);
+        height: vw(40px);
+    }
+
+    @include m1() {
+        padding-left: 0;
+        justify-content: center;
+
+        img {
+            width: vs(154px);
+            height: vs(40px);
+        }
     }
 }
 
