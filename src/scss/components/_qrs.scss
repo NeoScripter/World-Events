@@ -35,18 +35,37 @@
     @include m1() {
         flex-direction: column;
         align-items: center;
-        gap: vs(8px);    
+        gap: vs(8px);
     }
 }
 
 .qrs__item {
+    position: relative;
     width: vw(547px);
 
-    img {
+    > img {
         @include image();
     }
 
     @include m1() {
-        width: vs(290px); 
+        width: vs(290px);
+    }
+}
+
+.qrs__image {
+    position: absolute;
+    width: vw(165px);
+    height: vw(165px);
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+
+    
+    > img {
+        @include image(contain);
+    }
+    @include m1() {
+        width: vs(165px);
+        height: vs(165px);
     }
 }
