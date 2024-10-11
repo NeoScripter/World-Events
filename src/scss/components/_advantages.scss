@@ -1,6 +1,4 @@
 .advs {
-
-
 }
 
 .advs__title {
@@ -19,29 +17,95 @@
 }
 
 .advs__viewport {
-    margin-left: vw(405px); 
+    margin-left: vw(405px);
     transition: transform 0.5s ease-in-out;
     display: flex;
     align-items: center;
     gap: vw(16px);
 
     @include m1() {
-        flex-direction: column;
+        display: block;
         gap: vs(16px);
         margin-left: 0;
     }
-    
 }
 
 .advs__item {
     flex: 1 0 vw(460px);
-
-    img {
-        @include image(contain);
-    }
+    height: vw(550px);
+    border-radius: vw(20px);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: vw(48px);
 
     @include m1() {
         flex: 1 0 100%;
+        height: vs(440px);
+        border-radius: vs(20px);
+        padding: vs(24px);
+        margin-bottom: vs(16px);
+    }
+}
+
+@for $i from 1 through 5 {
+    .advs__item--#{$i} {
+        background-image: url("../assets/images/advs/adv-#{$i}.png");
+    }
+}
+
+.advs__item-title {
+    margin-bottom: vw(16px);
+    font-family: "Medium";
+    font-size: vw(32px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+
+    @include m1() {
+        margin-bottom: vs(8px);
+        font-size: vs(24px);
+    }
+}
+
+.advs__item-prg {
+    margin-bottom: vw(32px);
+    @include fs18();
+
+    @include m1() {
+        margin-bottom: vs(32px);
+        font-size: vs(16px);
+    }
+}
+
+.advs__item--2,
+.advs__item--5 {
+    .advs__item-title {
+        margin-top: vw(182px);
+        width: vw(242px);
+
+        @include m1() {
+            margin-top: vs(198px);
+            width: vs(200px);
+        }
+    }
+
+    .advs__item-prg {
+        max-width: vw(267px);
+
+        @include m1() {
+            max-width: vs(220px);
+        }
+    }
+}
+
+.advs__item--3 {
+    .advs__item-title {
+        margin-top: vw(274px);
+
+        @include m1() {
+            margin-top: vs(230px);
+        }
     }
 }
 
@@ -63,8 +127,8 @@
     width: vw(16px);
     height: vw(16px);
     border-radius: 50%;
-    
+
     &.slide--selected {
-        background-color: #BABABA;
+        background-color: #bababa;
     }
 }
