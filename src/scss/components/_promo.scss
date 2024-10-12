@@ -33,7 +33,7 @@
     align-items: center;
     color: color("orange-400");
     text-transform: uppercase;
-    animation: marquee 10s linear infinite;
+    animation: marquee 20s linear infinite;
 
     @include fs20();
 

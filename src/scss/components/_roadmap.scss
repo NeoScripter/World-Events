@@ -1,10 +1,9 @@
 .roadmap {
     padding-left:vw(401px);
-
+    overflow-x: scroll;
 
     @include m1() {
         padding-left: 0;
-        overflow-x: scroll;
     }
 }
 
@@ -32,13 +31,17 @@
 .roadmap__top-items {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     position: relative;
     top: vw(56px);
+    gap: vw(272px);
 }
 
 .roadmap__image {
     z-index: 2;
+    background-image: url(../assets/images/roadmap.png);
+    background-position: left;
+
     img {
         @include image(contain);
         @include m1() {
@@ -49,14 +52,20 @@
 
     @include m1() {
         width: vs(1555px);
+        background-image: url(../assets/images/roadmap-mobile.png);
+        background-position: left;
     }
 }
 
 .roadmap__bottom-items {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: vw(292px);
+
+    .roadmap__item:first-of-type {
+        margin-left: vw(325px);
+    }
 }
 
 .roadmap__item {

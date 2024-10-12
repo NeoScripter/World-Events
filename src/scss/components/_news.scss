@@ -98,13 +98,13 @@
     }
 
     .news__marquee-text {
-        animation: marquee-left 12s linear infinite;
+        animation: marquee-left 20s linear infinite;
     }
 }
 
 .news__marquee--bottom {
     .news__marquee-text {
-        animation: marquee-right 12s linear infinite;
+        animation: marquee-right 20s linear infinite;
     }
 }
 

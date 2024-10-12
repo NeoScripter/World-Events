@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
         <title>World Events</title>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
@@ -213,14 +214,20 @@
 
                 <div class="qrs__flex">
                     <div class="qrs__item">
-                        <img src="assets/images/qr/qr_1.png" alt="" />
+                        <picture>
+                            <source srcset="assets/images/qr/qr_1-mobile.png" media="(max-width: 600px)">
+                            <img src="assets/images/qr/qr_1.png" alt="QR Code">
+                        </picture>
                         <div class="qrs__image">
                             <img src="assets/images/qr/qr-footer-1.png" alt="" />
                         </div>
                     </div>
 
                     <div class="qrs__item">
-                        <img src="assets/images/qr/qr_2.png" alt="" />
+                        <picture>
+                            <source srcset="assets/images/qr/qr_2-mobile.png" media="(max-width: 600px)">
+                            <img src="assets/images/qr/qr_2.png" alt="QR Code">
+                        </picture>
                         <div class="qrs__image">
                             <img src="assets/images/qr/qr-footer-2.png" alt="" />
                         </div>
@@ -500,7 +507,7 @@
                     </div>
 
                     <div class="roadmap__image">
-                        <img src="assets/images/roadmap.png" alt="" />
+                       <!--  <img src="assets/images/roadmap.png" alt="" /> -->
                     </div>
 
                     <div
@@ -544,7 +551,7 @@
                     </div>
 
                     <div class="roadmap__image">
-                        <img src="assets/images/roadmap-mobile.png" alt="" />
+                <!--         <img src="assets/images/roadmap-mobile.png" alt="" /> -->
                     </div>
                 </div>
             </section>

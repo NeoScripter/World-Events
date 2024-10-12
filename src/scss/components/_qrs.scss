@@ -43,7 +43,8 @@
     position: relative;
     width: vw(547px);
 
-    > img {
+    > img,
+    > picture {
         @include image();
     }
 

@@ -322,14 +322,14 @@
     position: absolute;
     width: vw(348px);
     height: vw(54px);
-    left: -5%;
-    bottom: vw(-262px);
+    left: -6%;
+    bottom: vw(-222px);
 
     @include m1() {
         width: vs(254px);
         height: vs(40px);
-        left: 0%;
-        bottom: vs(-72px);
+        left: 5%;
+        bottom: vs(-52px);
     }
 }
 
