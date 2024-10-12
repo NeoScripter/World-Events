@@ -1,6 +1,8 @@
 .roadmap {
     padding-left:vw(401px);
     overflow-x: scroll;
+    overflow-y: hidden;
+    overflow-y: clip;
 
     @include m1() {
         padding-left: 0;
