@@ -43,6 +43,8 @@
     z-index: 2;
     background-image: url(../assets/images/roadmap.png);
     background-position: left;
+    background-size: contain;
+    background-repeat: repeat-x;
 
     img {
         @include image(contain);
